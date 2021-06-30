@@ -1,6 +1,8 @@
 import React from "react";
 import { GET_ALL_USUARIO } from "../../api";
 
+import "./style.css";
+
 const Home = () => {
   const [usuarios, setUsuarios] = React.useState(null);
 
@@ -23,7 +25,6 @@ const Home = () => {
   if (usuarios === null) return null;
   return (
     <div>
-      <div>Hello Home</div>
       <table>
         <thead>
           <tr>
@@ -38,6 +39,10 @@ const Home = () => {
               <td>{id}</td>
               <td> {nome} </td>
               <td> {idade}</td>
+              <td>
+                {" "}
+                <button>Edit</button>{" "}
+              </td>
             </tr>
           ))}
         </tbody>
