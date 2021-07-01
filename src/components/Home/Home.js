@@ -25,6 +25,7 @@ const Home = () => {
   if (usuarios === null) return null;
   return (
     <div>
+      <h2>Usuários</h2>
       <table>
         <thead>
           <tr>
@@ -39,9 +40,10 @@ const Home = () => {
               <td>{id}</td>
               <td> {nome} </td>
               <td> {idade}</td>
-              <td>
+              <td style={{ textAlign: "center", width: "200px" }}>
                 {" "}
-                <button>Edit</button>{" "}
+                <button id="button-edit">Edit</button>{" "}
+                <button id="button-delete">Delete</button>{" "}
               </td>
             </tr>
           ))}
