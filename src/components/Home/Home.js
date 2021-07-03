@@ -5,6 +5,7 @@ import "./style.css";
 
 const Home = () => {
   const [usuarios, setUsuarios] = React.useState(null);
+  console.log(usuarios);
 
   React.useEffect(() => {
     const { url } = GET_ALL_USUARIO();
