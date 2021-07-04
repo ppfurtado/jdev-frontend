@@ -22,3 +22,15 @@ export function POST_USUARIO(user) {
     },
   };
 }
+
+export function DELETE(id) {
+  return {
+    url: `${URL_API}/deletar-usuario?iduser=${id}`,
+    options: {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    },
+  };
+}

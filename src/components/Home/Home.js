@@ -1,5 +1,5 @@
 import React from "react";
-import { GET_ALL_USUARIO } from "../../api";
+import { DELETE, GET_ALL_USUARIO } from "../../api";
 import Header from "../Header/Header";
 
 import "./style.css";
@@ -24,6 +24,14 @@ const Home = () => {
     getData();
   }, []);
 
+  const hanbleDelete = async (id) => {
+    const { url, options } = DELETE(id);
+    const data = await fetch(url, options);
+    setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
+    console.log("JSONTESTE", data);
+    return data;
+  };
+
   if (usuarios === null) return null;
   return (
     <div>
@@ -45,7 +53,9 @@ const Home = () => {
               <td style={{ textAlign: "center", width: "200px" }}>
                 {" "}
                 <button id="button-edit">Edit</button>{" "}
-                <button id="button-delete">Delete</button>{" "}
+                <button id="button-delete" onClick={() => hanbleDelete(id)}>
+                  Delete
+                </button>{" "}
               </td>
             </tr>
           ))}
