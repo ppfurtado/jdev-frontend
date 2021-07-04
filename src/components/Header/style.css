@@ -1,0 +1,14 @@
+.containerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttoCriarUsuario {
+  padding: 5px 10px;
+}
+
+.buttoCriarUsuario:hover {
+  background-color: #ccc;
+  border-radius: 5px;
+}

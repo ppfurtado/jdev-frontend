@@ -1,16 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "./style.css";
+
 const Header = () => {
   return (
-    <nav>
+    <div className="containerHeader">
       <Link to="/">
         <h2>CRUD SPRINGBOOT API REST</h2>
       </Link>
-      <ul>
-        <Link to="criar-usuario">Criar Usuário</Link>
-      </ul>
-    </nav>
+      <nav>
+        <ul>
+          <li>
+            <Link className="buttoCriarUsuario" to="criar-usuario">
+              Criar Usuário
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 };
 
