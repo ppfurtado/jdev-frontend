@@ -1,5 +1,6 @@
 import React from "react";
 import { GET_ALL_USUARIO } from "../../api";
+import Header from "../Header/Header";
 
 import "./style.css";
 
@@ -26,7 +27,7 @@ const Home = () => {
   if (usuarios === null) return null;
   return (
     <div>
-      <h2>Usuários</h2>
+      <Header />
       <table>
         <thead>
           <tr>

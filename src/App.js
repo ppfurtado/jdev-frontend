@@ -4,11 +4,11 @@ import Home from "./components/Home/Home";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateUser from "./components/CreateUser/CreateUser";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <div className="App">
-      <h2>CRUD SPRINGBOOT API REST</h2>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
