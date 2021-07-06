@@ -33,11 +33,10 @@ const CreateUser = () => {
         idade: idade,
       });
       const users = await fetch(url, options);
+      navigate("/");
       return users;
     } catch (error) {
-      console.log(error);
-    } finally {
-      navigate("/");
+      return console.log(error);
     }
   };
 
