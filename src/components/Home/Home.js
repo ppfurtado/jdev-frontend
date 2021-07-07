@@ -9,15 +9,12 @@ const Home = () => {
   const [usuarios, setUsuarios] = React.useState(null);
   const nativate = useNavigate();
 
-  console.log(usuarios);
-
   React.useEffect(() => {
     const { url } = GET_ALL_USUARIO();
     async function getData() {
       try {
         const data = await fetch(url);
         const json = await data.json();
-        console.log(json);
         setUsuarios(json);
         return json;
       } catch (error) {
@@ -35,7 +32,6 @@ const Home = () => {
     const { url, options } = DELETE(id);
     const data = await fetch(url, options);
     setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
-    console.log("JSONTESTE", data);
     return data;
   };
 
