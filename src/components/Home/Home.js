@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { DELETE, GET_ALL_USUARIO } from "../../api";
 import Header from "../Header/Header";
 
@@ -6,6 +7,8 @@ import "./style.css";
 
 const Home = () => {
   const [usuarios, setUsuarios] = React.useState(null);
+  const nativate = useNavigate();
+
   console.log(usuarios);
 
   React.useEffect(() => {
@@ -23,6 +26,10 @@ const Home = () => {
     }
     getData();
   }, []);
+
+  const handleEdit = (id) => {
+    nativate(`/atualizar/${id}`);
+  };
 
   const hanbleDelete = async (id) => {
     const { url, options } = DELETE(id);
@@ -52,7 +59,9 @@ const Home = () => {
               <td> {idade}</td>
               <td style={{ textAlign: "center", width: "200px" }}>
                 {" "}
-                <button id="button-edit">Edit</button>{" "}
+                <button id="button-edit" onClick={() => handleEdit(id)}>
+                  Edit
+                </button>{" "}
                 <button id="button-delete" onClick={() => hanbleDelete(id)}>
                   Delete
                 </button>{" "}

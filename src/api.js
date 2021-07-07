@@ -34,3 +34,29 @@ export function DELETE(id) {
     },
   };
 }
+
+export function PUT_USUARIO(user) {
+  return {
+    url: `${URL_API}/atualizar`,
+    options: {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+      body: JSON.stringify({
+        id: user.id,
+        nome: user.nome,
+        idade: user.idade,
+      }),
+    },
+  };
+}
+
+export function GET_USUARIO(id) {
+  return {
+    url: `${URL_API}/usuarioId?iduser=${id}`,
+    options: {
+      method: "GET",
+    },
+  };
+}
